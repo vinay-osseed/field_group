@@ -22,7 +22,12 @@
             if (typeof $this.data(direction + 'Tab') !== 'undefined') {
 
               if ($this.is('.required-fields') && ($this.find('[required]').length > 0 || $this.find('.form-required').length > 0)) {
-                $this.data(direction + 'Tab').link.find('strong:first').addClass('form-required');
+                /**
+                 * PATCH :- https://www.drupal.org/files/issues/2021-10-15/3065473-5.patch
+                 */
+                $this.data(direction + 'Tab').link.find('strong:first').addClass('form-required').attr('aria-required', true).parent().append('<span class="visually-hidden" aria-label="required" > (required) </span>');
+                // $this.data(direction + 'Tab').link.find('strong:first').addClass('form-required');
+
               }
 
               if ($('.error', $this).length) {

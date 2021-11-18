@@ -21,7 +21,7 @@
 
           // Add required field markers if needed
           if (group_info.settings.show_label && $wrapper.is('.required-fields') && ($wrapper.find('[required]').length > 0 || $wrapper.find('.form-required').length > 0)) {
-            $wrapper.find(group_info.settings.label_element + ':first').addClass('form-required');
+            $wrapper.find(group_info.settings.label_element + ':first').addClass('form-required').append('<span class="visually-hidden" aria-label="required" > (required) </span>');
           }
         }
 

@@ -44,7 +44,7 @@
 
             var $this = $(this);
             if ($this.is('.required-fields') && ($this.find('[required]').length > 0 || $this.find('.form-required').length > 0)) {
-              $('h3.ui-accordion-header a').eq(i).addClass('form-required');
+              $('h3.ui-accordion-header a').eq(i).addClass('form-required').append('<span class="visually-hidden" aria-label="required" > (required) </span>');
             }
             if ($('.error', $this).length) {
               // Save first error item, for focussing it.

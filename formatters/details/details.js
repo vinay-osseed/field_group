@@ -14,7 +14,7 @@
         var $this = $(this);
 
         if ($this.is('.required-fields') && ($this.find('[required]').length > 0 || $this.find('.form-required').length > 0)) {
-          $('summary', $this).first().addClass('form-required');
+          $('summary', $this).first().addClass('form-required').append('<span class="visually-hidden" aria-label="required" > (required) </span>');
         }
       });
     }

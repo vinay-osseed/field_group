@@ -16,6 +16,7 @@
 
         if ($this.is('.required-fields') && ($this.find('[required]').length > 0 || $this.find('.form-required').length > 0)) {
           $('legend', $this).first().addClass('form-required');
+          $('.form-required .fieldset-legend').append('<span class="visually-hidden" aria-label="required" > (required) </span>');
         }
       });
     }
